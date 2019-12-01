@@ -37,5 +37,12 @@ namespace WFAPersonelTakibi
 
             pcbImageUrl.Image = Image.FromFile(employee.ImageUrl);
         }
+
+        private void metroLink1_Click(object sender, EventArgs e)
+        {
+            Form2 frm = new Form2();
+            this.Hide();
+            frm.ShowDialog();
+        }
     }
 }

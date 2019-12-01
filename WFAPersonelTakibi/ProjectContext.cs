@@ -5,13 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace WFAPersonelTakibi
 {
     public class ProjectContext : DbContext
     {
         public ProjectContext()
         {
-            Database.Connection.ConnectionString = "Server=.;database=EFDb;uid=sa;pwd=123";
+            Database.Connection.ConnectionString = "Server= DESKTOP-K525H2A\\SQLEXPRESS01; Database= WfaPt; Integrated Security=True;";
         }
 
         public virtual DbSet<Employee> Employees { get; set; }

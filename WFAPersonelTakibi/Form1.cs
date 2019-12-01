@@ -21,6 +21,46 @@ namespace WFAPersonelTakibi
         {
             InitializeComponent();
         }
+
+        public void Temizle(Control control)
+        {
+            foreach (Control item in control.Controls)
+            {
+                if (item is MetroTextBox)
+                {
+                    item.Text = "";
+                }
+                else if (item is MetroComboBox)
+                {
+                    item.Text = default;
+                }
+                if (item is MetroDateTime)
+                {
+                    item.Text = "";
+                }
+            }
+        }
+
+        public void HataMetodu(Control control)
+        {
+            foreach (Control item in control.Controls)
+            {
+                if (item is MetroTextBox && item.Text is null)
+                {
+                    MessageBox.Show("Lütfen bilgileri eksiksiz giriniz");
+                }
+
+                else if (item is ComboBox && item.Text is null)
+                {
+                    MessageBox.Show("Lütfen bilgileri eksiksiz giriniz");
+                }
+                else if (item is MetroDateTime && item.Text is null)
+                {
+                    MessageBox.Show("Lütfen bilgileri eksiksiz giriniz");
+                }
+            }
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             cmbDepartment.Items.AddRange(Enum.GetNames(typeof(Department)));
@@ -59,17 +99,12 @@ namespace WFAPersonelTakibi
                 }
             }
 
-            
+            HataMetodu(groupBox1);
+            Temizle(groupBox1);
+            Employees.Add(employee);
             bool result = employeesService.Add(employee);
             Employees.Add(employee);
             MetroMessageBox.Show(this, result ? "Kayıt başarıyla eklendi" : "Kayıt ekleme hatası", "Kayıt Ekleme Bildirme", MessageBoxButtons.OK, result ? MessageBoxIcon.Hand : MessageBoxIcon.Error);
-        }
-
-        private void MetroLink1_Click(object sender, EventArgs e)
-        {
-            Form2 frm = new Form2();
-            this.Hide();
-            frm.ShowDialog();
         }
 
         private void PcbImageUrl_DoubleClick(object sender, EventArgs e)
@@ -93,6 +128,13 @@ namespace WFAPersonelTakibi
                 }
             }
         }
+
+        private void MetroLink1_Click(object sender, EventArgs e)
+               {
+                   Form2 frm = new Form2();
+                   this.Hide();
+                   frm.ShowDialog();
+               }
 
         private void Form1_DoubleClick(object sender, EventArgs e)
         {
