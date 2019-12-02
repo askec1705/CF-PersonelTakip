@@ -12,7 +12,7 @@ namespace WFAPersonelTakibi
     {
         public ProjectContext()
         {
-            Database.Connection.ConnectionString = "Server= DESKTOP-K525H2A\\SQLEXPRESS01; Database= WfaPt; Integrated Security=True;";
+            Database.Connection.ConnectionString = "Server=.;Database=wfaPt;UID=sa;PWD=123;";
         }
 
         public virtual DbSet<Employee> Employees { get; set; }

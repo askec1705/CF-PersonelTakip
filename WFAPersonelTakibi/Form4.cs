@@ -48,7 +48,7 @@ namespace WFAPersonelTakibi
             }
         }
 
-        private void Form4_Load(object sender, EventArgs e)
+        public void Form4_Load(object sender, EventArgs e)
         {
             cmbDepartment.Items.AddRange(Enum.GetNames(typeof(Department)));
 

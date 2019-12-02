@@ -28,7 +28,8 @@ namespace WFAPersonelTakibi
 
         public bool Delete(Employee employee)
         {
-            _context.Employees.Remove(employee).State = System.Data.Entity.EntityState.Deleted;
+            _context.Employees.Attach(employee);
+            _context.Employees.Remove(employee);
             return _context.SaveChanges() > 0;
         }
         public bool Update(Employee employee)
@@ -38,7 +39,7 @@ namespace WFAPersonelTakibi
         }
         public Employee GetById(int id)
         {
-            return null;
+            return _context.Employees.Find(id);
         }
     }
 }

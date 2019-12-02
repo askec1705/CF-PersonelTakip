@@ -111,7 +111,7 @@
             this.txtFirstName.CustomButton.UseSelectable = true;
             this.txtFirstName.CustomButton.Visible = false;
             this.txtFirstName.Lines = new string[0];
-            this.txtFirstName.Location = new System.Drawing.Point(195, 33);
+            this.txtFirstName.Location = new System.Drawing.Point(195, 31);
             this.txtFirstName.MaxLength = 32767;
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.PasswordChar = '\0';
