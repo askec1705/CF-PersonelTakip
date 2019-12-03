@@ -24,7 +24,7 @@ namespace WFAPersonelTakibi
 
         EmployeesService employeesService = new EmployeesService();
 
-        public Form4(Employee employee)
+        public Form4(Employee employee) : this()
         {
             this.employee = employee;
         }
@@ -62,7 +62,7 @@ namespace WFAPersonelTakibi
 
             MetroRadioButton rd = (MetroRadioButton)metroPanel1.Controls.Find(("rd" + employee.Gender.ToString()), false)[0];
             rd.Checked = true;
-            pcbImageUrl.Image = Image.FromFile(employee.ImageUrl);
+            //pcbImageUrl.Image = Image.FromFile(employee.ImageUrl);
         }
 
         private void BtnSave_Click(object sender, EventArgs e)

@@ -68,7 +68,6 @@ namespace WFAPersonelTakibi
         {
             Guid Id = (Guid)dgvEmployees.SelectedRows[0].Cells[0].Value;
             Employee personel = db.Employees.FirstOrDefault(x => x.EmployeeID == Id);
-            employeesService.GetById(0);
             Form3 frm3 = new Form3(personel);
             this.Hide();
             frm3.ShowDialog();

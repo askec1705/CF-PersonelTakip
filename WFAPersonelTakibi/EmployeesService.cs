@@ -39,7 +39,8 @@ namespace WFAPersonelTakibi
         }
         public Employee GetById(int id)
         {
-            return _context.Employees.Find(id);
+
+            return _context.Employees.Find();
         }
     }
 }
